@@ -6,7 +6,7 @@ require 'active_support'
 require './tog_structs'
 
 
-before do
+before '/station/*' do
 	@jsonS = ActiveSupport::JSON
 	content_type 'json', :charset => 'utf-8'
 	# Initialize Mechanize
@@ -29,7 +29,7 @@ get '/station/:station' do
 	departures=[]
 	doc.each do |link|
 		if !link.content.include? "Vis"
-			departures << Departure.new(link.content)
+			departures << Departure.new(link)
 		else
 			break
 		end
@@ -37,4 +37,19 @@ get '/station/:station' do
 	
 	@jsonS.encode(Station.new(params[:station], departures))
 
+end
+
+get '/' do
+	'Looking for the readme? Try <a href=https://github.com/nickbarnwell/DSB-TogAPI>here</a>'
+	redirect 'https://github.com/nickbarnwell/DSB-TogAPI'
+end
+
+not_found do
+	status 404
+	'That wasn\'t found, sorry. Try checking out the readme to see if you were accessing an unsupported method'
+end
+
+error do
+	status 500
+	'Something has gone wrong, we\'re probably looking into it'
 end

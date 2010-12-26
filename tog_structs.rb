@@ -11,13 +11,18 @@ class Station
 	end
 end
 class Departure
-	attr_accessor :line, :finaldestination, :time
+	attr_accessor :line, :finaldestination, :time, :uri
 	
 	def initialize(link)
-		link = link.strip!.split(",")
+		@uri = link.attribute('href').to_s
+		link = link.content.strip!.split(",")
 		@time = link[0]
 		@line = link[1]
 		@finaldestination = link[2]
+	end
+	
+	def url
+		'http://mobil.bane.dk/'+@uri
 	end
 	
 	def to_s
