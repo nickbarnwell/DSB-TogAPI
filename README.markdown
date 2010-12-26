@@ -1,5 +1,6 @@
 TogAPI: because scraping is no fun
 ========================================================
+
 Having started to write a train schedule app for Windows Phone 7, I was suddenly stymied when I realized there is no API provided by DSB to get that information. This is a a wrapper around the Mobile version of the bane.dk site, and currently only supports departing S-Trains.
 
 Install
@@ -18,3 +19,5 @@ will return
 Departure items are a hash with the keys of `line`, `time`, `finaldestination`, and `uri` (redacted from sample)
 
 Please report any errors to nickbarnwell@boltoncomputing.com or submit them to the git bug tracker. 
+=======
+
