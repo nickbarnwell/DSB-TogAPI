@@ -38,8 +38,3 @@ get '/station/:station' do
 	@jsonS.encode(Station.new(params[:station], departures))
 
 end
-
-get '/' do
-  "Hello"
-end
-  
