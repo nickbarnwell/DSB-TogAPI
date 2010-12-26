@@ -1,5 +1,5 @@
 source "http://rubygems.org"
 gem "nokogiri"
 gem "sinatra"
-gem "active_support"
+gem "activesupport"
 gem "mechanize"
