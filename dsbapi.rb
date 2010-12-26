@@ -1,6 +1,6 @@
 # encoding: UTF-8
 require 'sinatra'
-require 'Mechanize'
+require 'mechanize'
 require 'rubygems'
 require 'active_support'
 require './tog_structs'

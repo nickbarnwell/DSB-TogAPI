@@ -1,2 +1,2 @@
-require 'dsbapi'
+require './dsbapi'
 run Sinatra::Application
