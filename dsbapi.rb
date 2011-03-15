@@ -59,7 +59,7 @@ end
 
 get '/' do
 	'Looking for the readme? Try <a href=https://github.com/nickbarnwell/DSB-TogAPI>here</a>'
-	#redirect 'https://github.com/nickbarnwell/DSB-TogAPI'
+	redirect 'https://github.com/nickbarnwell/DSB-TogAPI'
 end
 
 not_found do
